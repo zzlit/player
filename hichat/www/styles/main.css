@@ -1,7 +1,21 @@
 html,body{
-	margin: 0;
+	margin: 10px;
+	background-image: url(/content/background-image2.png);
+	background-repeat: no-repeat;
 	background-color: #efefef;
+	background-size: 100%;
 	font-family: sans-serif;
+}
+h1{
+	background-image: url(/content/chat.png);
+	background-repeat: no-repeat;
+	background-position: 117px;
+	text-align:center;
+}
+#status{
+	display: block;
+	text-align: right;
+	color: #606060;
 }
 .wrapper{
 	width: 500px;
@@ -9,6 +23,7 @@ html,body{
 	padding: 5px;
 	margin: 0 auto;
 	background-color: #ddd;
+	opacity: 0.95;
 }
 #loginWrapper{
 	position: fixed;
@@ -26,12 +41,20 @@ html,body{
 	display: none;
 }
 .banner{
-	height: 80px;
+	height: 82px;
 	width: 100%;
 }
 .banner p{
 	float: left;
 	display: inline-block;
+}
+#txtspan{
+	text-align:center;
+	border:2px solid #a1a1a1;
+	padding:10px 40px; 
+	background:#dddddd;
+	width:350px;
+	border-radius:25px;
 }
 .controls{
 	height: 100px;
@@ -39,7 +62,7 @@ html,body{
 	position: relative;
 }
 #historyMsg{
-	height: 400px;
+	height: 410px;
 	background-color: #fff;
 	overflow: auto;
 	padding: 2px;
@@ -71,13 +94,13 @@ html,body{
 #messageInput{
 	width: 440px;
 	max-width: 440px;
-	height: 90px;
+	height: 81px;
 	max-height: 90px;
 	float:left;
 }
 #sendBtn{
 	width: 50px;
-	height: 96px;
+	height: 87px;
 	float: right;
 }
 #emojiWrapper{
@@ -100,6 +123,30 @@ html,body{
 .emoji{
 	display: inline;
 }
+span.txtspan{
+    display: block;
+    padding: 15px 40px 15px 0px;
+    margin: 0px 0px 0px 21px;
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+    word-wrap:break-word;
+}
+
+span.txtspan:before {
+	position: relative;
+    left: -15px;
+    top: 9px;
+    content: '';
+    border-top: 16px solid rgba(25, 147, 147, 0.2);
+    border-left: 15px solid transparent;
+}
+
+a.url{
+	display: block;
+	border: 5px solid rgba(25, 147, 147, 0.2);
+	border-radius: 10px;
+}
+
 footer{
 	text-align: center;
 }
