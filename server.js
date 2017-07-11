@@ -1,11 +1,14 @@
 //服务器及页面相应部分
+//express是管理路由响应请求的模块，根据请求的URL返回相应的HTML页面。这里我们使用一个事先写好的静态页面返回给客户端，只需使用express指定要返回的页面的路径即可。
 var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
+//socket是一个包,使用它可以很方便地建立服务器到客户端的sockets连接，发送事件与接收特定事件。
+//通过socket.emit()来激发一个事件，通过socket.on()来侦听和处理对应事件。
 	io = require('socket.io').listen(server),//引入socket.io模块并绑定到服务器
 	users =[];//保存在线用户的昵称
-app.use('/',express.static(__dirname + '/www'));
-server.listen(8080, function() {
+	app.use('/',express.static(__dirname + '/www'));
+	server.listen(8080, function() {
 	console.log('lisen on 8080...')
 });
 
