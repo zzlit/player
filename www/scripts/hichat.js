@@ -19,13 +19,13 @@ HiChat.prototype = {
 		//监听socket的connect事件，此事件表示连接已经建立
 		this.socket.on('connect',function(){
 			//连接到服务器后，显示昵称输入框
-			document.getElementById('info').textContent = 'Welcome to like-WebQQ :)';
-			document.getElementById('nickWrapper').style.display = 'block';
-			/*document.getElementById('nicknameInput').focus();*/
+			document.getElementById('info').textContent = '欢迎来到聊天小站';
+			document.getElementById('loginWrapper_2').style.display = "block";
+			document.getElementById('nicknameInput').focus();
 		});
 
 		this.socket.on('nickExisted',function(){
-			document.getElementById('info').textContent = 'Nickname is occupied, please re-enter！';  //显示昵称被占用的提示
+			document.getElementById('info').textContent = '昵称被占用，请重新输入！';  
 		});
 
 		this.socket.on('loginSuccess',function(){
@@ -56,7 +56,7 @@ HiChat.prototype = {
 				//不为空，则发起一个login事件并将输入的昵称发送到服务器
 				that.socket.emit('login',nickName);
 			} else{
-				document.getElementById('info').textContent = 'Nickname can not be empty！';
+				document.getElementById('info').textContent = '昵称不能为空！';
 				//否则输入框获得焦点
 				document.getElementById('nicknameInput').focus();
 			};

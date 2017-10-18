@@ -1,3 +1,9 @@
+* {
+  margin: 0px auto;
+  padding: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
 html,body{
 	margin: 10px;
 	background-image: url(/content/timg2.gif);
@@ -70,11 +76,7 @@ h1{
 	box-shadow: 3px 4px 18px 2px #2d2b2b;
 }
 #info{
-	background: linear-gradient(135deg, #131513 0%,#9e9898 100%,#eed5a9 100%); 
-}
-#nickWrapper{
-	display: none;
-	height: 200px;
+	line-height: 20;
 }
 .banner{
 	font-size:20px; 
