@@ -36,10 +36,6 @@ HiChat.prototype = {
 		});
 
 		this.socket.on('system', function(nickName, userCount, type){
-			//判断用户是连接还是离开以显示不同的信息
-/*			var msg = nickName + (type == 'login' ? "&nbsp;&nbsp;" + 'joined' : "&nbsp;&nbsp;" + 'left');
-			//制定系统消息为红色
-			that._displayNewMsg('system',msg,'red');*/
 			//将在线人数显示到页面顶部
 			document.getElementById('status').textContent = userCount + (userCount>1?' users':' user')+' online';
 		});
@@ -180,7 +176,7 @@ HiChat.prototype = {
 			//将消息中的表情换为图片
 			msg = this._showEmoji(msg);
 		msgToDisplay.style.color = color ||'#000';
-		msgToDisplay.innerHTML = user +/* '<span class="timespan">(' + date +')</span>' + */':<span class="txtspan" >' + msg +'</span>';
+		msgToDisplay.innerHTML = user +':<span class="txtspan" >' + msg +'</span>';
 		container.appendChild(msgToDisplay);
 		container.scrollTop = container.scrollHeight;
 	},
@@ -190,7 +186,7 @@ HiChat.prototype = {
 			msgToDisplay = document.createElement('p'),
 			date = new Date().toTimeString().substr(0,8);
 		msgToDisplay.style.color = color||'#000';
-		msgToDisplay.innerHTML = user +  /*'<span class="timespan">(' + date + ')</span> <br/>' +*/ '<a href="' + imgData + '" target="_blank" class="url"><img src="' + imgData + '"/></a>';
+		msgToDisplay.innerHTML = user + '<a href="' + imgData + '" target="_blank" class="url"><img src="' + imgData + '"/></a>';
 		container.appendChild(msgToDisplay);
 		container.scrollTop = container.scrollHeight;
 	},
